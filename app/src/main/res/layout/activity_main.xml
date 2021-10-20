@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,18 +10,24 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayoutMA"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content">
 
-        <com.google.android.material.appbar.MaterialToolbar
+        <Toolbar
             android:id="@+id/materialToolbarMA"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
-            android:theme="@style/Default.MaterialToolbar"
+            android:theme="@style/Default.Toolbar"
             app:layout_scrollFlags="scroll|enterAlways|snap"
-            app:popupTheme="@style/Default.PopupMenuStyle" />
+            app:popupTheme="@style/Default.PopupMenuStyle">
+
+            <TextView
+                android:id="@+id/tvTitleMA"
+                android:text="@string/app_name"
+                android:theme="@style/Default.Title"
+                android:layout_width="wrap_content"
+                android:fontFamily="@font/titlefont"
+                android:layout_height="wrap_content"/>
+        </Toolbar>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayoutMA"
@@ -31,4 +37,18 @@
             android:theme="@style/Default.TabLayout" />
     </com.google.android.material.appbar.AppBarLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerMA"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
