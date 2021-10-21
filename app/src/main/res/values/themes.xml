@@ -4,6 +4,7 @@
 
     <!-- colors. -->
     <color name="primaryColor">#405DE6</color>
+    <color name="primaryTextColor">@color/white</color>
     <color name="tabSelectedColor">@color/white</color>
     <color name="toolbarTitleColor">@color/white</color>
     <color name="tabUnSelectedColor">@color/black</color>
@@ -51,6 +52,16 @@
     <style name="Default.Title" parent="Widget.MaterialComponents.TextView" >
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="Default.TextInputLayout">
+        <item name="colorPrimary">@color/primaryColor</item> // Activated State
+        <item name="colorOnSurface">@color/primaryColor</item> // Normal State
+
+        <item name="android:colorControlActivated">@color/primaryColor</item> // Normal State
+        <item name="android:colorControlNormal">@color/primaryColor</item> // Normal State
+        <item name="android:colorControlHighlight">@color/primaryColor</item> // Normal State
+
     </style>
 
 </resources>
